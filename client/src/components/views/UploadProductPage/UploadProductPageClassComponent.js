@@ -7,13 +7,13 @@ const { Title } = Typography;
 const { TextArea } = Input;
 
 const Continents = [
-    { key: 1, value: "Africa" },
-    { key: 2, value: "Europe" },
-    { key: 3, value: "Asia" },
-    { key: 4, value: "North America" },
-    { key: 5, value: "South America" },
-    { key: 6, value: "Australia" },
-    { key: 7, value: "Antarctica" }
+    { key: 1, value: "Elektronik & Gadget" },
+    { key: 2, value: "Mobil" },
+    { key: 3, value: "Motor" },
+    { key: 4, value: "Rumah Tangga" },
+    { key: 5, value: "Properti" },
+    { key: 6, value: "Keperluan Pribadi" },
+    { key: 7, value: "Hobi & Olahraga" }
 ]
 
 export class UploadProductPage extends Component {
@@ -53,7 +53,7 @@ export class UploadProductPage extends Component {
         if (!this.state.title || !this.state.description ||
             !this.state.continents || !this.state.images
             || !this.state.price) {
-            return alert('Please first fill all the fields')
+            return alert('Isi semua field terlebih dahulu')
         }
 
         const variables = {
@@ -68,12 +68,12 @@ export class UploadProductPage extends Component {
         axios.post('/api/product/uploadProduct', variables)
             .then(response => {
                 if (response.data.success) {
-                    alert('video Uploaded Successfully')
+                    alert('video sukses diupload')
                     setTimeout(() => {
                         this.props.history.push('/')
                     }, 1000);
                 } else {
-                    alert('Failed to upload video')
+                    alert('Upload gagal')
                 }
             })
     }
@@ -87,7 +87,7 @@ export class UploadProductPage extends Component {
         return (
             <div style={{ maxWidth: '700px', margin: '2rem auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                <Title level={2} > Upload Travel Product</Title>
+                <Title level={2} > Upload Product</Title>
             </div>
 
             <Form onSubmit={this.onSubmit}>
@@ -95,19 +95,19 @@ export class UploadProductPage extends Component {
                <FileUpload refreshFunction={this.updateFiles} />
 
                 <br /><br />
-                <label>Title</label>
+                <label>Judul</label>
                 <Input
                     onChange={this.handleChangeTitle}
                     value={this.state.title}
                 />
                 <br /><br />
-                <label>Description</label>
+                <label>Deskripsi</label>
                 <TextArea
                     onChange={this.handleChangeDecsription}
                     value={this.state.description}
                 />
                 <br /><br />
-                <label>Price($)</label>
+                <label>Harga</label>
                 <Input
                     type="number"
                     onChange={this.handleChangePrice}
@@ -122,7 +122,7 @@ export class UploadProductPage extends Component {
                 <br /><br />
 
                 <Button type="primary" size="large" onClick={this.onSubmit}>
-                    Submit
+                    Upload
                 </Button>
             </Form>
         </div>

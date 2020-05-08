@@ -4,7 +4,7 @@ import { Icon, Col, Card, Row } from 'antd';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
 import RadioBox from './Sections/RadioBox';
-import { continents, price } from './Sections/Datas';
+import { harga, kategori } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
 
 const { Meta } = Card;
@@ -18,8 +18,8 @@ function LandingPage() {
     const [SearchTerms, setSearchTerms] = useState("")
 
     const [Filters, setFilters] = useState({
-        continents: [],
-        price: []
+        kategori: [],
+        harga: []
     })
 
     useEffect(() => {
@@ -73,7 +73,7 @@ function LandingPage() {
             >
                 <Meta
                     title={product.title}
-                    description={`$${product.price}`}
+                    description={`$${product.harga}`}
                 />
             </Card>
         </Col>
@@ -94,7 +94,7 @@ function LandingPage() {
     }
 
     const handlePrice = (value) => {
-        const data = price;
+        const data = harga;
         let array = [];
 
         for (let key in data) {
@@ -113,7 +113,7 @@ function LandingPage() {
 
         newFilters[category] = filters
 
-        if (category === "price") {
+        if (category === "harga") {
             let priceValues = handlePrice(filters)
             newFilters[category] = priceValues
 
@@ -142,9 +142,9 @@ function LandingPage() {
 
 
     return (
-        <div style={{ width: '75%', margin: '3rem auto' }}>
+        <div style={{ width: '75%', margin: '3rem auto', height: '10dp' }}>
             <div style={{ textAlign: 'center' }}>
-                <h2>  Let's Travel Anywhere  <Icon type="rocket" />  </h2>
+                <h2>  Belanja Puas Harga Pas <Icon type="" />  </h2>
             </div>
 
 
@@ -153,14 +153,14 @@ function LandingPage() {
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24} >
                     <CheckBox
-                        list={continents}
-                        handleFilters={filters => handleFilters(filters, "continents")}
+                        list={kategori}
+                        handleFilters={filters => handleFilters(filters, "Kategori")}
                     />
                 </Col>
                 <Col lg={12} xs={24}>
                     <RadioBox
-                        list={price}
-                        handleFilters={filters => handleFilters(filters, "price")}
+                        list={harga}
+                        handleFilters={filters => handleFilters(filters, "Harga")}
                     />
                 </Col>
             </Row>
@@ -178,7 +178,7 @@ function LandingPage() {
 
             {Products.length === 0 ?
                 <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
-                    <h2>No post yet...</h2>
+                    <h2>Tidak ada product</h2>
                 </div> :
                 <div>
                     <Row gutter={[16, 16]}>

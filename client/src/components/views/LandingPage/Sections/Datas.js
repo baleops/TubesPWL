@@ -1,72 +1,72 @@
 
-const price = [
+const harga = [
     {
         "_id": 0,
-        "name": "Any",
+        "name": "Semua",
         "array": []
     },
     {
         "_id": 1,
-        "name": "$0 to $199",
-        "array": [0, 199]
+        "name": "0 to Rp 200.000",
+        "array": [0, 200000]
     },
     {
         "_id": 2,
-        "name": "$200 to $249",
-        "array": [200, 249]
+        "name": "Rp 200.000 to Rp 499.000",
+        "array": [200, 499000]
     },
     {
         "_id": 3,
-        "name": "$250 to $279",
-        "array": [250, 279]
+        "name": "Rp 500.000 to Rp 999.000",
+        "array": [500000, 999000]
     },
     {
         "_id": 4,
-        "name": "$280 to $299",
-        "array": [280, 299]
+        "name": "Rp 1.000.000 to Rp 1.499.000",
+        "array": [1000000, 1499000]
     },
     {
         "_id": 5,
-        "name": "More than $300",
-        "array": [300, 1500000]
+        "name": "More than Rp 1.500.000",
+        "array": [1500000, 30000000]
     }
 ]
 
 
 
-const continents = [
+const kategori = [
     {
         "_id": 1,
-        "name": "Africa"
+        "name": "Elektronik & Gadget"
     },
     {
         "_id": 2,
-        "name": "Europe"
+        "name": "Mobil"
     },
     {
         "_id": 3,
-        "name": "Asia"
+        "name": "Motor"
     },
     {
         "_id": 4,
-        "name": "North America"
+        "name": "Rumah Tangga"
     },
     {
         "_id": 5,
-        "name": "South America"
+        "name": "Properti"
     },
     {
         "_id": 6,
-        "name": "Australia"
+        "name": "Keperluan Pribadi"
     },
     {
         "_id": 7,
-        "name": "Antarctica"
+        "name": "Hobi & Olahraga"
     }
 ]
 
 
 export {
-    price,
-    continents
+    harga,
+    kategori
 }
