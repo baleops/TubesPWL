@@ -1,13 +1,9 @@
-# TUBES PWL
+# Tubes-PWL-shop
 
-react js
-mongodb
+npm install
 
-run aplikasi dengan cara berikut : gunakan terminal 
-- masuk ke folder lalu lakukan "npm intsall"
-- masuk ke folder client dan lalukan "npm install"
-- kemudian kembali ke folder utama lalu lakukan "npm run dev"
-dev merupakan file config server mongodb
+npm start
 
+buka localhost:3200
 
-buat branch baru untuk commit berdasarkan file yang diubah, sesuaikan nama branch lalu lakukan PR (Pull Request)
+install mongodb untuk database
