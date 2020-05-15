@@ -6,7 +6,7 @@ var passport = require('passport');
 var csrfProtectionToken = csrf();
 router.use(csrfProtectionToken);
 
-/* GET and POST : user signup page. */
+/* GET and POST : user register page. */
 router.get('/signup', function(req, res, next){
   var messages = req.flash('error');
   res.render('user/signup', { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
@@ -18,7 +18,7 @@ router.post('/signup', passport.authenticate('local.signup', {
   failureFlash: true
 }));
 
-/* GET and POST : user signin page. */
+/* GET and POST : user login page. */
 router.get('/signin', function(req, res, next){
   var messages = req.flash('error');
   res.render('user/signin', { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
