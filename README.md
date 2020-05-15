@@ -6,9 +6,9 @@ install mongodb untuk database
 
 jalankan server database
 
-masuk ke folder seed
-
 open terminal :
+
+cd seed
 
 node product-seeder.js
 
