@@ -16,4 +16,4 @@ cd ..
 
 npm start
 
-buka localhost:3200
+buka localhost:3210
