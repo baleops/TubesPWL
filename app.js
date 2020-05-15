@@ -14,7 +14,7 @@ var app = express();
 mongoose.connect('mongodb://localhost:27017/dbku', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // view engine setup
-app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
+app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: 'hbs'}));
 app.set('view engine', '.hbs');
 
 app.use(logger('dev'));

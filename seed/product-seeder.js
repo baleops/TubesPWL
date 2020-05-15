@@ -6,26 +6,26 @@ mongoose.connect('mongodb://localhost:27017/dbku', {useNewUrlParser: true, useUn
 
 var products = [
     new Product ({
-        imagePath: 'https://i.pinimg.com/originals/fe/3a/e1/fe3ae18f6556d771f7d1998feede3a7b.jpg',
+        imagePath: 'https://i.ytimg.com/vi/AdHmdOyOi_s/maxresdefault.jpg',
         title: 'Oh M G',
         desc: 'Gafgafg dfdgfdyfgdyfwf wufheufe',
         price: 200
     }),
     new Product ({
-        imagePath: 'https://i.pinimg.com/originals/fe/3a/e1/fe3ae18f6556d771f7d1998feede3a7b.jpg',
-        title: 'Kaguya is here',
+        imagePath: 'https://i.ytimg.com/vi/AdHmdOyOi_s/maxresdefault.jpg',
+        title: 'item u',
         desc: 'Gafgafg dfdgfdyfgdyfwf wufheuf ffffffffffffffffffefefefe effsdgdfg gffgfgfg w ae',
         price: 2865
     }),
     new Product ({
         imagePath: 'https://i.pinimg.com/originals/fe/3a/e1/fe3ae18f6556d771f7d1998feede3a7b.jpg',
-        title: 'Kahuya sama',
+        title: 'item a',
         desc: 'Gafgafg dfdgfdyfyfwf wufheufe',
         price: 2045
     }),
     new Product ({
         imagePath: 'https://i.pinimg.com/originals/fe/3a/e1/fe3ae18f6556d771f7d1998feede3a7b.jpg',
-        title: 'Typo bgsd',
+        title: 'item x',
         desc: 'Gafgafg dfdgfdyfgdyfwf w',
         price: 209
     })
