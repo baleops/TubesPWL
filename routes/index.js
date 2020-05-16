@@ -5,13 +5,14 @@ var Cart = require('../models/cart');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+  var successMsg = req.flash('success')[0];
   Product.find(function (err, docs) {
     var productChunks = [];
     var chunkSize = 3;
     for (var i = 0; i < docs.length; i += chunkSize) {
       productChunks.push(docs.slice(i, i + chunkSize));
     }
-    res.render('shop/index', { title: 'Aplikasi TUBES E-Commerse', products: productChunks });
+    res.render('shop/index', { title: 'Aplikasi TUBES E-Commerse', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
   });
 });
 
@@ -44,6 +45,14 @@ router.get('/checkout', function (req, res, next) {
   }
   var cart = new Cart(req.session.cart);
   res.render('shop/checkout', { totalPrice: cart.totalPrice });
+});
+
+router.post('/checkout', function (req, res, next) {
+  if (!req.session.cart) {
+    return res.redirect('/shopping-cart');
+  }
+  req.flash("success", "Pembelian Berhasil");
+  res.redirect('/');
 });
 
 module.exports = router;
